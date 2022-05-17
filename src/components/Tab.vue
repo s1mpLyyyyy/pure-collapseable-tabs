@@ -18,7 +18,7 @@
               cursor-pointer`"
       @click="toggleTab(article.id)"
     >
-      <h1 class="lg:text-3xl md:text-2xl text-lg font-medium select-none py-5">
+      <h1 class="lg:text-3xl md:text-2xl text-lg font-medium select-none py-8">
         {{ article.name }}
       </h1>
       <div>
