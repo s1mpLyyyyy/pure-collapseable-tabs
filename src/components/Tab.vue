@@ -1,21 +1,12 @@
 <template>
   <div id="SingleCollapseableTabLayout">
     <div
-      :class="`
-              w-full
-              flex
-              justify-between
-              items-center
-              transition
-              duration-500
-              ease-in-out
-              ${
-                currentId === article.id
-                  ? 'bg-custom-200 text-custom-400'
-                  : 'bg-custom-100 text-custom-300'
-              }
-              px-8
-              cursor-pointer`"
+      class="w-full flex justify-between items-center transition duration-500 ease-in-out px-8 cursor-pointer"
+      :class="
+        currentId === article.id
+          ? 'bg-custom-200 text-custom-400'
+          : 'bg-custom-100 text-custom-300'
+      "
       @click="toggleTab(article.id)"
     >
       <h1 class="lg:text-3xl md:text-2xl text-lg font-medium select-none py-8">
@@ -24,11 +15,8 @@
       <div>
         <img
           src="@/static/arrow.png"
-          :class="`transform select-none ${
-            currentId === article.id
-              ? 'rotate-180 duration-300'
-              : 'rotate-0 duration-300'
-          }`"
+          class="transform select-none duration-300"
+          :class="currentId === article.id ? 'rotate-180 ' : 'rotate-0'"
           alt="collapseable-arrow"
         />
       </div>
@@ -58,7 +46,7 @@ export default {
   },
   methods: {
     toggleTab(id) {
-      this.currentId === id ? (this.currentId = 0) : (this.currentId = id);
+      this.currentId = this.currentId === id ? 0 : id;
     },
   },
 };
