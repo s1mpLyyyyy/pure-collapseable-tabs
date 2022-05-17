@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.fadeHeight-enter-active,
+.fadeHeight-leave-active {
+  transition: all 0.5s;
+  min-height: 5vh;
+}
+.fadeHeight-enter,
+.fadeHeight-leave-to {
+  opacity: 0.1;
+  max-height: 0px;
+}
